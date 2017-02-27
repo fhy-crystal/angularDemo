@@ -1,0 +1,80 @@
+/*通用class*/
+.center {
+	text-align: center;
+}
+.none {
+	display: none;
+}
+.clear {
+	clear: both;
+}
+
+/*提示条*/
+.alert{
+	display: none;
+	padding: 15px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10001;
+	overflow: visible;
+	width: 100%;
+	border-bottom: 1px solid;
+	color: white;
+	text-align: center;
+}
+
+/*左侧导航展开*/
+#sidebar > ul > li > ul.sub {
+	display: block;
+}
+#sidebar > ul > li > ul.sub > li > a {
+	cursor: pointer;
+}
+
+/*显示和取消层*/
+#showDiv {
+	z-index: 1100;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+}
+#showDiv .contxt {
+	z-index: 1101;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 500px;
+	height: 300px;
+	padding: 0;
+	margin: -100px 0 0 -250px;
+}
+#showDiv .contxt img{
+	width: 100px;
+	height: 107px;
+	margin: 0 200px; 
+	text-align: center;
+}
+#showDiv .contxt p{
+	color: #fff;
+	font-size: 25px;
+	word-spacing: 0.1em;
+	line-height: 100px;
+	text-align: center;
+	height: 100px;
+	margin-top: 15px;
+}
+
+
+/*多选框模拟*/
+.simulate{
+	border: 0;
+	background: transparent;
+	-webkit-appearance: none;
+	appearance:;
+}

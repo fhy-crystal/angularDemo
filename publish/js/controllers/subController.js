@@ -1,0 +1,1 @@
+define(["./controllers"],function(o){o.controller("subController",["$rootScope","$scope","$state","$cookies",function(o,e,n,t){}])});

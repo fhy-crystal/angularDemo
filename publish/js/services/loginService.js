@@ -1,0 +1,1 @@
+define(["./services"],function(n){n.factory("loginService",["httpService",function(n){return{getTimeStamp:function(){return n.httpJson("account/login/api")},login:function(t,e){return n.httpJson("account/login/info",t,e)},getGroupId:function(){return n.httpJson("manage/userrole/queryuserrole")}}}])});

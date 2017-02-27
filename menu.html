@@ -1,0 +1,45 @@
+<div class="nav-collapse" id="sidebar">
+	<ul class="sidebar-menu" id="nav-accordion">
+		
+		<!-- 订阅 -->
+		<li class="sub-menu">
+			<a>
+				<i class="fa fa-tasks"></i>
+				<span>订阅</span>
+			</a>
+			<ul class="sub">
+				<li ui-sref-active="active">
+					<a ui-sref="lifesystem.subscribe">记录查看</a>
+				</li>
+			</ul>
+		</li>
+		
+		<!-- 订单管理 -->
+		<li class="sub-menu">
+			<a>
+				<i class="fa fa-th"></i>
+				<span>订单管理</span>
+			</a>
+			<ul class="sub">
+				<li ui-sref-active="active">
+					<a ui-sref="lifesystem.order">订单列表</a>
+				</li>
+			</ul>
+		</li>
+
+		<!-- 数据统计 -->
+		<li class="sub-menu">
+			<a>
+				<i class="fa fa-th"></i>
+				<span>数据统计</span>
+			</a>
+			<ul class="sub">
+				<li ui-sref-active="active">
+					<a ui-sref="lifesystem.data">活跃量统计</a>
+				</li>
+			</ul>
+		</li>
+
+	</ul>
+</div>
+<div ui-view></div>

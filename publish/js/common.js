@@ -1,0 +1,1 @@
+function showDiv(){$("#showDiv").css("display","block")}function hideDiv(){$("#showDiv").css("display","none")}

@@ -1,0 +1,1 @@
+define(["angular"],function(n){return n.module("controllers",[])});
