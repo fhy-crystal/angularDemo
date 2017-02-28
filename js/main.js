@@ -7,8 +7,10 @@ require.config({
 		'domReady': './libs/domReady', // RequireJS加载模块速度很快，很有可能在页面DOM Ready之前脚本已经加载完毕
 		'bootstrap_min':'./libs/bootstrap-3.3.7.min',
 		'encryption': './libs/encryption', // 加密处理文件
+		'async': './libs/async', // 异步加载脚本
 		'common': './common', // 通用方法
-		'country': './country' // 各国家城市的经纬度
+		'country': './country', // 各国家城市的经纬度
+		'baiduAPI': 'http://api.map.baidu.com/api?v=2.0&ak=GgIubyjCbKK7tvEssU1ZkfkDoze20A7r' // 百度地图API
 	},
 	// 不符合AMD（asynchronous module definition）异步模块定义, 如果要加载它们的话，必须先定义它们的特征
 	shim: {
@@ -27,7 +29,11 @@ require.config({
 		},
 		'common':{
 			deps:['jquery']
-		}
+		},
+		'baiduAPI': {
+			deps: ['jquery'],
+			exports: 'baiduAPI'
+		},
 	},
 
 	deps: [
