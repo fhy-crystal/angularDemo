@@ -6,6 +6,7 @@ gulpObj.cssmin = require('gulp-minify-css');
 gulpObj.htmlmin = require('gulp-htmlmin');
 gulpObj.imagemin = require('gulp-imagemin');
 gulpObj.uglify = require('gulp-uglify');
+gulpObj.assetRev = require('gulp-asset-rev'); // 增加版本号
 
 // 具体方法
 // 清理文件
@@ -17,6 +18,7 @@ gulp.task("clean", function() {
 // 压缩css
 gulp.task('css', function() {
 	return gulp.src('./css/**/*.css')
+	.pipe(gulpObj.assetRev())
 	.pipe(gulpObj.cssmin())
 	.pipe(gulp.dest('./publish/css'));
 })
@@ -34,6 +36,7 @@ gulp.task('html', function() {
 		minifyCSS: true // 压缩页面CSS
 	};
 	return gulp.src(['./**/*.html', '!./node_modules'])
+	.pipe(gulpObj.assetRev())
 	.pipe(gulpObj.htmlmin(options))
 	.pipe(gulp.dest('./publish'));
 })
@@ -41,6 +44,7 @@ gulp.task('html', function() {
 // 压缩图片
 gulp.task('image', function() {
 	return gulp.src('./img/**/*.{png,jpg,gif,ico}')
+	.pipe(gulpObj.assetRev())
 	.pipe(gulpObj.imagemin())
 	.pipe(gulp.dest('./publish/img'));
 })
@@ -48,6 +52,7 @@ gulp.task('image', function() {
 // 压缩js
 gulp.task('js', function() {
 	return gulp.src('./js/**/*.js')
+	.pipe(gulpObj.assetRev())
 	.pipe(gulpObj.uglify())
 	.pipe(gulp.dest('./publish/js'));
 })
