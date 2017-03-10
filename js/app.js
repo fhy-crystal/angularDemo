@@ -6,6 +6,7 @@ define([
 	'encryption',
 	'async',
 	'bootstrap_min',
+	'timepicker',
 	'common',
 	'country',
 	'baiduAPI',
@@ -58,6 +59,11 @@ define([
 		}]);
 
 		app.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
+
+			// 添加版本号，防止浏览器缓存
+			var versionString = 'version0.0.5'
+			var globalVersion = hex_md5(versionString + 'fhy_Crystal19931110');
+
 			$urlRouterProvider.otherwise('login');
 			$stateProvider
 				// 登录
@@ -66,7 +72,7 @@ define([
 					views: {
 						'mainheader@': {},
 						'maincontent': {
-							templateUrl: 'login.html',
+							templateUrl: 'login.html?v=' + globalVersion,
 							controller: 'loginController'
 						},
 						'footer@': {}
@@ -77,11 +83,11 @@ define([
 					url: '/lifesystem',
 					views: {
 						'mainheader@': {
-							templateUrl: 'header.html',
+							templateUrl: 'header.html?v=' + globalVersion,
 							controller: 'headerController'
 						},
 						'maincontent': {
-							templateUrl: 'menu.html',
+							templateUrl: 'menu.html?v=' + globalVersion,
 							controller: 'menuController'
 						},
 						'footer@': {}
@@ -90,20 +96,20 @@ define([
 				// 订阅
 				.state('lifesystem.subscribe', {
 					url: '/subscribe',
-					templateUrl: 'page_subscribe/history.html',
+					templateUrl: 'page_subscribe/history.html?v=' + globalVersion,
 					controller: 'subController'
 					
 				})
 				// 订单
 				.state('lifesystem.order', {
 					url: '/orderList',
-					templateUrl: 'page_order/orderList.html',
+					templateUrl: 'page_order/orderList.html?v=' + globalVersion,
 					controller: 'orderController'
 				})
 				// 数据统计
 				.state('lifesystem.data', {
 					url: '/dataStatistics',
-					templateUrl: 'page_data/map.html',
+					templateUrl: 'page_data/map.html?v=' + globalVersion,
 					controller: 'dataController'
 				})
 		}])

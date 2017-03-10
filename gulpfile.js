@@ -11,7 +11,7 @@ gulpObj.assetRev = require('gulp-asset-rev'); // 增加版本号
 // 具体方法
 // 清理文件
 gulp.task("clean", function() {
-	return gulp.src('./publish')
+	return gulp.src(['./dest'])
 	.pipe(gulpObj.clean());
 })
 
@@ -35,7 +35,7 @@ gulp.task('html', function() {
 		minifyJS: true, // 压缩页面JS
 		minifyCSS: true // 压缩页面CSS
 	};
-	return gulp.src(['./**/*.html', '!./node_modules'])
+	return gulp.src(['./**/*.html', '!./node_modules/**/*.html'])
 	.pipe(gulpObj.assetRev())
 	.pipe(gulpObj.htmlmin(options))
 	.pipe(gulp.dest('./publish'));

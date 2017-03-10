@@ -19,5 +19,23 @@ define(['angular'], function(angular) {
 			}
 		}
 	}])
+
+	directives.directive('bsTimepicker', function() {
+		return {
+			restrict: 'EA',
+			link: function(scope, ele, attrs, ctrl) {
+				var datetimepicker = $(ele).datetimepicker({
+					format: 'yyyy-mm-dd hh:ii:ss',
+					weekStart: 1,
+					todayBtn:  1,
+					autoclose: 1,
+					todayHighlight: 1,
+					startView: 2,
+					forceParse: 0,
+					// showMeridian: 1 //PM
+				})
+			}
+		}
+	})
 	return directives;
 })
