@@ -8,11 +8,22 @@
 						<header class="panel-heading"></header>
 						<div class="panel-body">
 							<ul>
-								<li class="form-inline">
+								<li class="form-inline" style="float:left">
 									<label for="">查询时间：</label>
-									<span style="display:inline-block;position:relative;" bs-Timepicker class="date">
-										<input type="text" class="form-control" style="height:40px;width:280px;">
-										<span class="input-group-btn add-on" style="position:absolute;top:-3px;right:0;margin:0;">
+									<span style="display:inline-block;position:relative;" bs-timepicker class="date">
+										<input type="text" class="form-control" style="height:40px;width:280px;margin-right: 40px;" placeholder="请选择时间">
+										<span class="input-group-btn add-on" style="position:absolute;top:-3px;right:40px;margin:0;">
+											<button class="btn btn-danger" type="button">
+												<i class="fa fa-calendar"></i>
+											</button>
+										</span>
+									</span>
+								</li>
+								<li class="form-inline">
+									<label for="">查询日期：</label>
+									<span style="display:inline-block;position:relative;" bs-date-picker class="date">
+										<input type="text" class="form-control" style="height:40px;width:280px;margin-right: 40px;" value={{todayDate}} placeholder="请选择日期">
+										<span class="input-group-btn add-on" style="position:absolute;top:-3px;right:40px;margin:0;">
 											<button class="btn btn-danger" type="button">
 												<i class="fa fa-calendar"></i>
 											</button>

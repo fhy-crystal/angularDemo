@@ -47,5 +47,20 @@ define(['./controllers', '../services/services', '../services/subService', '../d
 				$scope.jumpPage();
 			}
 		});
+
+		$scope.todayDate = getCurrentDate('-');
+
+		/**
+		 * 获取当天日期
+		 * @param  {[type]} dash 间隔符
+		 * @return {[type]}      返回年+月+日
+		 */
+		function getCurrentDate(dash) {
+			var today = new Date();
+			var year = today.getFullYear(),
+				month = today.getMonth() + 1,
+				date = today.getDate();
+			return year + dash + month + dash + date;
+		}
 	}])
 })

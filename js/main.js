@@ -6,7 +6,8 @@ require.config({
 		'ngCookies':'./libs/angular-cookies-1.6.1.min',
 		'domReady': './libs/domReady', // RequireJS加载模块速度很快，很有可能在页面DOM Ready之前脚本已经加载完毕
 		'bootstrap_min':'./libs/bootstrap-3.3.7.min',
-		'timepicker': './libs/bootstrap-datetimepicker',
+		'timepicker': './libs/bootstrap-datetimepicker', // 时间选择
+		'datepicker': './libs/bootstrap-datepicker', // 日期选择
 		'encryption': './libs/encryption', // 加密处理文件
 		'async': './libs/async', // 异步加载脚本
 		'common': './common', // 通用方法
@@ -29,6 +30,9 @@ require.config({
 			deps: ['jquery']
 		},
 		'timepicker': {
+			deps: ['jquery', 'bootstrap_min']
+		},
+		'datepicker': {
 			deps: ['jquery', 'bootstrap_min']
 		},
 		'common':{

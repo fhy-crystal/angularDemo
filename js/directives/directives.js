@@ -1,5 +1,6 @@
 define(['angular'], function(angular) {
 	var directives = angular.module('directives', []);
+	// 提示条
 	directives.directive('alertBar', ['$parse', function($parse) {
 		return {
 			restrict: 'A',
@@ -20,9 +21,10 @@ define(['angular'], function(angular) {
 		}
 	}])
 
+	// 时间选择
 	directives.directive('bsTimepicker', function() {
 		return {
-			restrict: 'EA',
+			restrict: 'EA', //E - 元素名称：<my-directive></my-directive>  A - 属性：<div my-directive="exp"></div>   C - 类名：<div class="my-directive: exp;"></div>   M - 注释：<!-- directive: my-directive exp -->
 			link: function(scope, ele, attrs, ctrl) {
 				var datetimepicker = $(ele).datetimepicker({
 					format: 'yyyy-mm-dd hh:ii:ss',
@@ -37,5 +39,19 @@ define(['angular'], function(angular) {
 			}
 		}
 	})
+
+	// 日期选择
+	directives.directive('bsDatePicker', function() {
+		return {
+			restrict: 'EA',
+			link: function(scope, ele, attrs, ctrl) {
+				var datepicker = $(ele).datepicker({
+					format: 'yyyy-mm-dd',
+					autoclose: 1
+				})
+			}
+		}
+	})
+
 	return directives;
 })

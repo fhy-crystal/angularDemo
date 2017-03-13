@@ -7,6 +7,7 @@ define([
 	'async',
 	'bootstrap_min',
 	'timepicker',
+	'datepicker',
 	'common',
 	'country',
 	'baiduAPI',
@@ -61,7 +62,7 @@ define([
 		app.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
 
 			// 添加版本号，防止浏览器缓存
-			var versionString = 'version0.0.5'
+			var versionString = 'version0.0.6'
 			var globalVersion = hex_md5(versionString + 'fhy_Crystal19931110');
 
 			$urlRouterProvider.otherwise('login');
